@@ -4,25 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1565C0">
-<title>厦门 6 日 · 长辈友好版行程（10.13-10.18）</title>
+<title>旅行攻略归档 · 每程一页</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
     --ink: #1A1A1A;
-    --ink-soft: #3A3A3A;
     --blue: #1565C0;
     --blue-light: #E8F1FC;
-    --red: #C62828;
-    --red-light: #FDECEA;
-    --amber: #8A5A00;
-    --amber-light: #FFF4D6;
-    --green: #1B5E20;
-    --green-light: #E7F4E8;
-    --line: #D9D9D9;
   }
-
-  html { scroll-behavior: smooth; }
 
   body {
     font-family: "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif;
@@ -31,547 +21,123 @@
     font-size: 19px;
     line-height: 1.9;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
 
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 18px 70px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 18px 60px; }
 
-  /* ============ 顶部导航 ============ */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    background: #FFFFFF;
-    border-bottom: 3px solid var(--blue);
-    margin: 0 -18px 22px;
-    padding: 10px 14px 12px;
-    display: flex; gap: 8px; overflow-x: auto;
-    scrollbar-width: none;
-  }
-  nav::-webkit-scrollbar { display: none; }
-  nav a {
-    flex: none;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 48px; padding: 0 18px;
-    font-size: 17px; font-weight: 700;
-    color: var(--blue); background: var(--blue-light);
-    border: 2px solid #BBD4F2; border-radius: 12px;
-    text-decoration: none; white-space: nowrap;
-  }
-  nav a:active { background: var(--blue); color: #fff; }
-
-  /* ============ 封面 ============ */
-  .hero {
+  header {
     background: linear-gradient(150deg, #1565C0 0%, #1976D2 60%, #2E9BE0 100%);
     border-radius: 20px;
     color: #fff;
-    padding: 34px 26px 30px;
+    padding: 32px 26px;
     box-shadow: 0 10px 26px rgba(21,101,192,.25);
-    margin-bottom: 26px;
+    margin-bottom: 28px;
   }
-  .hero .kicker { font-size: 18px; letter-spacing: 4px; font-weight: 700; opacity: .92; }
-  .hero h1 { font-size: 42px; line-height: 1.25; font-weight: 800; margin-top: 10px; letter-spacing: 2px; }
-  .hero .date { font-size: 24px; font-weight: 700; margin-top: 14px; opacity: .96; }
-  .hero .who {
-    margin-top: 18px; background: rgba(255,255,255,.18);
-    border: 2px solid rgba(255,255,255,.4);
-    border-radius: 14px; padding: 14px 16px;
-    font-size: 19px; font-weight: 700; line-height: 1.7;
-  }
+  header .kicker { font-size: 18px; letter-spacing: 4px; font-weight: 700; opacity: .92; }
+  header h1 { font-size: 38px; font-weight: 800; margin-top: 8px; letter-spacing: 2px; }
+  header p { font-size: 19px; margin-top: 12px; opacity: .95; }
 
-  /* ============ 通用卡片 ============ */
-  section { margin-bottom: 30px; scroll-margin-top: 86px; }
-
-  .card {
-    background: #fff;
-    border: 2px solid var(--line);
-    border-radius: 18px;
-    padding: 22px 20px;
-    margin-bottom: 16px;
-  }
-
-  .daytitle {
-    display: flex; align-items: center; gap: 14px;
-    margin-bottom: 14px;
-  }
-  .daynum {
-    flex: none;
-    min-width: 84px; height: 84px;
-    background: var(--blue); color: #fff;
-    border-radius: 16px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    font-weight: 800; line-height: 1.15;
-  }
-  .daynum b { font-size: 30px; }
-  .daynum span { font-size: 15px; }
-  .daytitle h2 { font-size: 27px; line-height: 1.4; font-weight: 800; }
-  .daytitle .date { font-size: 18px; color: var(--blue); font-weight: 700; }
-
-  /* 核心原则 */
-  .principle {
-    background: var(--amber-light);
+  .note {
+    background: #FFF4D6;
     border: 3px dashed #E0A800;
     border-radius: 14px;
     padding: 16px 18px;
-    font-size: 20px; font-weight: 800; color: var(--amber);
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-  .principle small { display: block; font-size: 16px; font-weight: 700; color: #A07400; letter-spacing: 2px; margin-bottom: 4px; }
-
-  /* 提示框 */
-  .alert {
-    background: var(--red-light);
-    border: 3px solid #F2B8B5;
-    border-radius: 14px;
-    padding: 16px 18px;
-    font-size: 19px; font-weight: 700; color: var(--red);
-    line-height: 1.75;
-    margin-bottom: 14px;
-  }
-  .hint {
-    background: var(--green-light);
-    border: 3px solid #AED9AF;
-    border-radius: 14px;
-    padding: 16px 18px;
-    font-size: 19px; font-weight: 700; color: var(--green);
-    line-height: 1.75;
-    margin-bottom: 14px;
+    font-size: 18px; font-weight: 700; color: #8A5A00;
+    line-height: 1.8;
+    margin-bottom: 26px;
   }
 
-  /* 行程条目 */
-  .step {
-    display: flex; gap: 14px;
-    padding: 14px 0;
-    border-bottom: 2px dashed #EBEBEB;
+  a.trip {
+    display: block;
+    background: #fff;
+    border: 2px solid #D9D9D9;
+    border-radius: 18px;
+    padding: 22px 20px;
+    margin-bottom: 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s ease, box-shadow .15s ease;
   }
-  .step:last-child { border-bottom: none; padding-bottom: 4px; }
-  .step .when {
-    flex: none; width: 96px;
-    font-size: 17px; font-weight: 800; color: var(--blue);
+  a.trip:active { transform: scale(.99); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+
+  .trip .top { display: flex; align-items: center; gap: 14px; }
+  .trip .badge {
+    flex: none;
+    min-width: 74px; height: 74px;
+    background: var(--blue); color: #fff;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 800;
+  }
+  .trip h2 { font-size: 26px; font-weight: 800; line-height: 1.4; }
+  .trip .date { font-size: 17px; color: var(--blue); font-weight: 700; }
+
+  .trip .route {
+    margin-top: 14px;
+    font-size: 18px; color: #4A4A4A; line-height: 1.8;
     background: var(--blue-light);
     border: 2px solid #C9DDF6;
-    border-radius: 10px;
-    text-align: center; padding: 6px 4px;
-    line-height: 1.4;
+    border-radius: 12px;
+    padding: 12px 14px;
   }
-  .step .what { font-size: 19px; line-height: 1.8; color: var(--ink-soft); }
-  .step .what b { color: var(--ink); font-weight: 800; }
-
-  h3 {
-    font-size: 21px; font-weight: 800; color: var(--ink);
-    margin: 6px 0 12px;
-    padding-left: 12px;
-    border-left: 6px solid var(--blue);
-    line-height: 1.5;
-  }
-
-  /* 美食 */
-  .food {
-    background: #FFF8EE;
-    border: 2px solid #F0DCBB;
-    border-radius: 14px;
-    padding: 16px 18px;
-    font-size: 19px; line-height: 1.8; color: #5A4520;
-  }
-  .food b { color: #8A5A00; font-weight: 800; }
-  .food ul { list-style: none; margin-top: 6px; }
-  .food li { padding-left: 22px; position: relative; margin-bottom: 6px; }
-  .food li::before { content: "🍚"; position: absolute; left: 0; top: 0; font-size: 16px; }
-
-  .tag {
-    display: inline-block;
-    background: #fff; border: 2px solid #C9DDF6;
-    color: var(--blue); font-size: 17px; font-weight: 700;
-    padding: 4px 12px; border-radius: 999px; margin: 4px 6px 0 0;
-  }
-
-  /* 重要清单 */
-  .checklist { list-style: none; }
-  .checklist li {
-    position: relative;
-    padding: 12px 0 12px 44px;
-    font-size: 19px; line-height: 1.8;
-    border-bottom: 2px dashed #EBEBEB;
-  }
-  .checklist li:last-child { border-bottom: none; }
-  .checklist li::before {
-    content: "✓";
-    position: absolute; left: 0; top: 14px;
-    width: 30px; height: 30px;
-    background: var(--green); color: #fff;
-    border-radius: 8px;
-    font-size: 19px; font-weight: 800;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .checklist li b { color: var(--red); }
-
-  .foot {
+  .trip .go {
+    margin-top: 14px;
+    font-size: 19px; font-weight: 800; color: var(--blue);
     text-align: center;
-    color: #7A7A7A;
-    font-size: 17px;
-    padding-top: 8px;
-    line-height: 1.9;
+    background: var(--blue-light);
+    border: 2px solid #C9DDF6;
+    border-radius: 12px;
+    padding: 12px 0;
   }
-  .foot a { color: var(--blue); font-weight: 700; }
 
-  .back-top {
-    position: fixed; right: 14px; bottom: 22px;
-    width: 56px; height: 56px; border-radius: 50%;
-    border: none; background: var(--blue); color: #fff;
-    font-size: 26px; font-weight: 800;
-    box-shadow: 0 8px 20px rgba(21,101,192,.35);
-    z-index: 60; opacity: 0; pointer-events: none; transition: .25s;
-  }
-  .back-top.on { opacity: 1; pointer-events: auto; }
-
-  @media (max-width: 400px) {
-    body { font-size: 18px; }
-    .hero h1 { font-size: 36px; }
-    .daytitle h2 { font-size: 24px; }
-    .step .when { width: 84px; font-size: 16px; }
-  }
+  .foot { text-align: center; color: #7A7A7A; font-size: 17px; margin-top: 30px; line-height: 1.9; }
 </style>
 </head>
 <body>
-
 <div class="wrap">
 
-  <nav>
-    <a href="#must">重要提醒</a>
-    <a href="#d1">Day1</a>
-    <a href="#d2">Day2</a>
-    <a href="#d3">Day3</a>
-    <a href="#d4">Day4</a>
-    <a href="#d5">Day5</a>
-    <a href="#d6">Day6</a>
-  </nav>
+  <header>
+    <div class="kicker">每 次 旅 行 · 独 立 归 档</div>
+    <h1>旅行攻略目录</h1>
+    <p>点任意一张卡片，即可打开那次旅行的完整攻略（可上下滑动浏览）。</p>
+  </header>
 
-  <!-- 封面 -->
-  <div class="hero">
-    <div class="kicker">长 辈 友 好 版 · 全 程 少 走 路</div>
-    <h1>厦门 6 日家庭游</h1>
-    <div class="date">10月13日 — 10月18日（周二出发）</div>
-    <div class="who">
-      📍 厦门 ｜ 泉州一日 ｜ 汕头一日<br>
-      ✅ 以电瓶车、扶梯、室内景点为主，不爬山<br>
-      ✅ 每天只走一条线，累了随时能坐下
-    </div>
-  </div>
+  <div class="note">📌 归档规则：每次旅行一个独立目录、一个独立页面，旧攻略永久保留、随时回看。</div>
 
-  <!-- 重要提醒 -->
-  <section id="must">
-    <div class="card">
-      <h3>出发前请先办这 5 件事</h3>
-      <ul class="checklist">
-        <li><b>10月17日晚上</b>就把 10/18 凌晨的网约车预约好，或提前请前台帮忙叫车（凌晨车少，临时叫车风险大）。</li>
-        <li>鼓浪屿船票提前在<b>「屿见厦门」</b>公众号买好（Day2 用）。</li>
-        <li>动车票：厦门北 → 泉州（早班）、汕头 → 厦门（返程认准<b>「汕头站」</b>，别买潮汕站）。</li>
-        <li>带好<b>身份证</b>（买船票、动车票、景区优惠门票都要用）。</li>
-        <li>带一双<b>防滑鞋</b>（菜市场、雨林喷雾区地面湿滑），备一件薄外套。</li>
-      </ul>
-    </div>
-    <div class="alert">⚠️ 最容易忘的一件事：Day6 凌晨 4 点前要出门，前一晚务必安排好车！</div>
-  </section>
-
-  <!-- Day 1 -->
-  <section id="d1">
-    <div class="card">
-      <div class="daytitle">
-        <div class="daynum"><b>D1</b><span>10/13 周二</span></div>
-        <div>
-          <div class="date">第一天</div>
-          <h2>抵达厦门 → 八市 + 中山路</h2>
-        </div>
-      </div>
-
-      <div class="principle">
-        <small>核 心 原 则</small>
-        住在酒店周边活动，零交通成本。
-      </div>
-
-      <div class="step">
-        <div class="when">中午</div>
-        <div class="what">落地后坐<b>空港快线或打车</b>到酒店入住休整，先把行李放下。</div>
-      </div>
-      <div class="step">
-        <div class="when">下午</div>
-        <div class="what"><b>下楼即达八市</b>，不用坐车。八市是老菜市场，<b>地面可能湿滑，请长辈留意脚下</b>。</div>
-      </div>
-      <div class="step">
-        <div class="when">傍晚</div>
-        <div class="what"><b>步行到中山路</b>，骑楼有遮阳避雨的长廊，走累了<b>随处有休息椅</b>。</div>
-      </div>
-      <div class="step">
-        <div class="when">晚餐</div>
-        <div class="what">黄则和花生汤，<b>炖得软烂</b>，很适合长辈口味。</div>
-      </div>
-
-      <h3>顺路吃什么</h3>
-      <div class="food">
-        <ul>
-          <li><b>阿杰五香卷</b> —— 现炸酥脆</li>
-          <li><b>友生风味小吃沙茶面</b> —— 人均二三十元</li>
-          <li><b>黄则和花生汤</b> —— 晚餐，软烂好嚼</li>
-        </ul>
+  <a class="trip" href="xiamen/">
+    <div class="top">
+      <div class="badge">厦</div>
+      <div>
+        <div class="date">2025.10.13 — 10.18 ｜ 6 天 5 晚</div>
+        <h2>厦门 · 长辈友好版</h2>
       </div>
     </div>
-  </section>
+    <div class="route">
+      厦门（八市 · 中山路 · 鼓浪屿 · 植物园 · 沙坡尾）＋ 泉州一日 ＋ 汕头一日<br>
+      🚶 少走路：电瓶车、山海扶梯、室内景点为主，不爬山
+    </div>
+    <div class="go">打开攻略 →</div>
+  </a>
 
-  <!-- Day 2 -->
-  <section id="d2">
-    <div class="card">
-      <div class="daytitle">
-        <div class="daynum"><b>D2</b><span>10/14 周三</span></div>
-        <div>
-          <div class="date">第二天</div>
-          <h2>鼓浪屿全天（路线大幅简化）</h2>
-        </div>
-      </div>
-
-      <div class="principle">
-        <small>核 心 原 则</small>
-        放弃爬山，以电瓶车和室内景点为主。
-      </div>
-
-      <div class="alert">🦵 日光岩登顶对长辈膝盖负担较大，<b>建议放弃登顶</b>，改乘观光电瓶车。</div>
-
-      <div class="step">
-        <div class="when">上岛</div>
-        <div class="what">从<b>第一码头</b>坐船上岛（船票提前在<b>「屿见厦门」</b>买好）。</div>
-      </div>
-      <div class="step">
-        <div class="when">码头</div>
-        <div class="what">下船直接在码头附近买<b>电瓶车票（约 50 元/人）</b>，坐到<b>菽庄花园</b>下车。</div>
-      </div>
-      <div class="step">
-        <div class="when">上午</div>
-        <div class="what"><b>菽庄花园</b>：依海而建的园林，<b>四十四桥临海平缓、无台阶</b>，长辈可在亭台楼阁间闲坐听涛；园内<b>钢琴博物馆是室内场馆，恒温不怕日晒</b>。</div>
-      </div>
-      <div class="step">
-        <div class="when">接着</div>
-        <div class="what"><b>皓月园滨海步道</b>很平缓，郑成功雕像面朝大海，适合慢慢散步。</div>
-      </div>
-      <div class="step">
-        <div class="when">午餐</div>
-        <div class="what">就在<b>龙头路</b>解决，老字号鱼丸、花生汤、沙茶面都有。</div>
-      </div>
-      <div class="step">
-        <div class="when">下午</div>
-        <div class="what">长辈体力还行的话，坐电瓶车去<b>八卦楼（风琴博物馆）</b>：室内参观，<b>全程可坐轮椅通行</b>，不受天气影响。</div>
-      </div>
-      <div class="step">
-        <div class="when">返程</div>
-        <div class="what"><b>下午三四点即可返程</b>，避开返程高峰。</div>
-      </div>
-
-      <h3>午餐怎么点（长辈吃得惯）</h3>
-      <div class="food">
-        <ul>
-          <li><b>沙茶面点不辣版</b></li>
-          <li><b>鱼丸选鲨鱼丸</b> —— 口感软弹不硬</li>
-          <li><b>花生汤</b> —— 软糯好消化</li>
-        </ul>
-      </div>
-      <div style="margin-top:10px">
-        <span class="tag">电瓶车 50 元/人</span>
-        <span class="tag">室内场馆优先</span>
-        <span class="tag">轮椅可通行</span>
+  <a class="trip" href="guizhou/">
+    <div class="top">
+      <div class="badge">黔</div>
+      <div>
+        <div class="date">2025.10.02 — 10.06 ｜ 5 天 4 晚</div>
+        <h2>黔桂环线 · 自驾</h2>
       </div>
     </div>
-  </section>
-
-  <!-- Day 3 -->
-  <section id="d3">
-    <div class="card">
-      <div class="daytitle">
-        <div class="daynum"><b>D3</b><span>10/15 周四</span></div>
-        <div>
-          <div class="date">第三天</div>
-          <h2>泉州一日游</h2>
-        </div>
-      </div>
-
-      <div class="principle">
-        <small>核 心 原 则</small>
-        一条直线走完，每个景点出口就是吃的。
-      </div>
-
-      <div class="hint">🚌 泉州古城<b>路面平整、无台阶</b>，非常适合长辈步行；累了随时坐<b>「小白车」，2 元/次，招手即停</b>，不用走回头路。</div>
-
-      <div class="step">
-        <div class="when">早上</div>
-        <div class="what">厦门北坐<b>早班动车</b>到泉州站，下车<b>打车直奔开元寺</b>。</div>
-      </div>
-      <div class="step">
-        <div class="when">上午</div>
-        <div class="what">开元寺<b>西门出来就是西街</b>，骑楼下边逛边吃，<b>面线糊、润饼</b>随手买，完全顺路。</div>
-      </div>
-      <div class="step">
-        <div class="when">中午</div>
-        <div class="what">西街尽头就是<b>钟楼</b>，打卡后拐入中山路吃午饭。</div>
-      </div>
-      <div class="step">
-        <div class="when">下午</div>
-        <div class="what">沿 <b>府文庙 → 清净寺 → 通淮关岳庙 → 天后宫</b> 这条线走，景点之间距离很近。</div>
-      </div>
-      <div class="step">
-        <div class="when">傍晚</div>
-        <div class="what">坐动车返回厦门，结束一天。</div>
-      </div>
-
-      <div class="hint">🙏 <b>关岳庙、天后宫都免费</b>；关岳庙香火极旺，长辈可以体验闽南拜拜文化。</div>
-
-      <h3>午餐推荐</h3>
-      <div class="food">
-        <ul>
-          <li><b>好成财牛排 + 咸饭 + 牛肉羹</b> —— 牛肉炖得软烂，长辈嚼得动</li>
-          <li><b>面线糊、润饼</b> —— 沿西街边走边吃</li>
-        </ul>
-      </div>
+    <div class="route">
+      南宁 → 贵阳（Citywalk · 甲秀楼）→ 江口（抹茶小镇 · 洞穴咖啡）→ 铜仁（中南门古城）→ 荔波小七孔 → 南宁<br>
+      🚗 全程自驾，每天睡到自然醒再出发（10/2、10/5 除外）
     </div>
-  </section>
-
-  <!-- Day 4 -->
-  <section id="d4">
-    <div class="card">
-      <div class="daytitle">
-        <div class="daynum"><b>D4</b><span>10/16 周五</span></div>
-        <div>
-          <div class="date">第四天</div>
-          <h2>汕头一日游</h2>
-        </div>
-      </div>
-
-      <div class="principle">
-        <small>核 心 原 则</small>
-        小公园老城本身就是一条美食步行线。
-      </div>
-
-      <div class="step">
-        <div class="when">出站</div>
-        <div class="what">从<b>汕头站</b>出站后，直接进入<b>小公园骑楼群</b>，这一带巷弄<b>坡度平缓</b>，老人小孩都能轻松走。</div>
-      </div>
-      <div class="step">
-        <div class="when">重点</div>
-        <div class="what"><b>镇邦街</b>：短短 120 米藏着最地道的潮汕美食，顺着老街慢慢走，<b>不用刻意找店</b>。</div>
-      </div>
-      <div class="step">
-        <div class="when">午餐</div>
-        <div class="what">就在镇邦街解决，或去<b>福平路吃牛肉粿条汤</b>（汤清肉嫩，长辈接受度高）。</div>
-      </div>
-      <div class="step">
-        <div class="when">下午</div>
-        <div class="what"><b>西堤公园</b>：看礐石大桥和内海湾的绝佳位置，<b>堤岸步道平缓</b>，夕阳时分特别美。</div>
-      </div>
-      <div class="step">
-        <div class="when">可选</div>
-        <div class="what">长辈对轮渡感兴趣的话，坐 <b>1 元广场轮渡</b>跨内海湾，单程几分钟，不累。</div>
-      </div>
-      <div class="step">
-        <div class="when">傍晚</div>
-        <div class="what">坐动车回厦门。</div>
-      </div>
-
-      <div class="alert">🎫 返程车次一定选<b>「汕头站」</b>出发，<b>不要买潮汕站的票</b>，两站相距很远。</div>
-
-      <h3>镇邦街吃什么</h3>
-      <div class="food">
-        <ul>
-          <li><b>卤鹅 · 蚝烙 · 牛肉丸 · 猪杂粥</b> —— 一家接一家</li>
-          <li><b>福平路牛肉粿条汤</b> —— 汤清肉嫩</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Day 5 -->
-  <section id="d5">
-    <div class="card">
-      <div class="daytitle">
-        <div class="daynum"><b>D5</b><span>10/17 周六</span></div>
-        <div>
-          <div class="date">第五天</div>
-          <h2>植物园 + 沙坡尾</h2>
-        </div>
-      </div>
-
-      <div class="principle">
-        <small>核 心 原 则</small>
-        植物园走「下行路线」，沙坡尾只坐不逛。
-      </div>
-
-      <div class="hint">🛗 植物园强烈建议<b>南门进、西门出</b>：南门进去直接坐<b>山海扶梯，约 10 分钟到山顶，全程不爬山</b>，扶梯上还能拍到双子塔和海景。</div>
-
-      <div class="step">
-        <div class="when">路线</div>
-        <div class="what"><b>南门 → 山海扶梯 → 多肉植物区 → 热带雨林世界 → 西门出</b>（一路下行）。</div>
-      </div>
-      <div class="step">
-        <div class="when">喷雾</div>
-        <div class="what">10 月雨林世界喷雾时间：<b>9:00–11:00 和 14:00–16:00</b>，阳光穿过水雾非常好看。</div>
-      </div>
-      <div class="step">
-        <div class="when">出园</div>
-        <div class="what">西门出来<b>右转 100 米就是「西门土笋冻」</b>，顺路尝一份。</div>
-      </div>
-      <div class="step">
-        <div class="when">下午</div>
-        <div class="what">坐车去<b>沙坡尾</b>，找一家露天茶馆坐下休息（比如<b>「茶人码头」</b>）。文艺街区不用走完，<b>坐着喝茶看渔港，比逛街舒服得多</b>。</div>
-      </div>
-
-      <div class="alert">👟 雨林喷雾区<b>地面湿滑</b>，提醒长辈<b>穿防滑鞋，不要穿凉鞋</b>。</div>
-      <div class="hint">🎟 门票：<b>60 岁以上半价（15 元），65 岁以上免票</b>，请带好身份证。</div>
-    </div>
-  </section>
-
-  <!-- Day 6 -->
-  <section id="d6">
-    <div class="card">
-      <div class="daytitle">
-        <div class="daynum"><b>D6</b><span>10/18 周日</span></div>
-        <div>
-          <div class="date">第六天 · 返程</div>
-          <h2>凌晨出发 → 回家</h2>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="when">6:00</div>
-        <div class="what">早上 <b>6 点的飞机</b>。</div>
-      </div>
-      <div class="step">
-        <div class="when">4:00 前</div>
-        <div class="what"><b>凌晨 4 点前必须从酒店出发</b>。</div>
-      </div>
-
-      <div class="alert" style="font-size:20px">
-        🚕 请务必在 <b>10月17日晚上</b>就预约好网约车，或提前跟前台说好帮忙叫车。<br>
-        凌晨车少，<b>临时叫车风险大</b>。
-      </div>
-
-      <div class="hint">🧳 前一晚把行李收好、证件充电器放在随身包里，早上就能从容出门。</div>
-    </div>
-  </section>
+    <div class="go">打开攻略 →</div>
+  </a>
 
   <div class="foot">
-    厦门 6 日 · 长辈友好版 ｜ 10.13 - 10.18<br>
-    <a href="qiangui.html">看上一版：黔桂环线 5 日自驾攻略</a>
+    旅行攻略归档 ｜ 下一次旅行会作为新目录加入这里
   </div>
 
 </div>
-
-<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
-
-<script>
-  var top = document.getElementById('backTop');
-  function onScroll() {
-    top.classList.toggle('on', window.pageYOffset > 500);
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-  top.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
 </body>
 </html>
