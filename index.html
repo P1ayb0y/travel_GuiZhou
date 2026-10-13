@@ -2,428 +2,576 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#FF4D5E">
-<title>黔桂环线 5天4晚自驾攻略 · 国庆出发</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1565C0">
+<title>厦门 6 日 · 长辈友好版行程（10.13-10.18）</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html { scroll-behavior:smooth; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1A1A1A;
+    --ink-soft: #3A3A3A;
+    --blue: #1565C0;
+    --blue-light: #E8F1FC;
+    --red: #C62828;
+    --red-light: #FDECEA;
+    --amber: #8A5A00;
+    --amber-light: #FFF4D6;
+    --green: #1B5E20;
+    --green-light: #E7F4E8;
+    --line: #D9D9D9;
+  }
+
+  html { scroll-behavior: smooth; }
+
   body {
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
-    color:#241E1A;
-    background:
-      radial-gradient(120vw 40vh at 100% 0%, #FFE7D2 0%, rgba(255,231,210,0) 60%),
-      radial-gradient(120vw 40vh at 0% 30%, #FFEBE6 0%, rgba(255,235,230,0) 60%),
-      linear-gradient(180deg,#FFF8F0 0%, #FFF1E6 40%, #FFF6EE 100%);
-    background-attachment:fixed;
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  .wrap { max-width:520px; margin:0 auto; padding:0 16px 60px; }
-
-  /* progress */
-  #bar {
-    position:fixed; top:0; left:0; height:3px; width:0;
-    background:linear-gradient(90deg,#FF4D5E,#FF8A3D);
-    z-index:99; transition:width .1s linear;
+    font-family: "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif;
+    color: var(--ink);
+    background: #F4F6F8;
+    font-size: 19px;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  /* sticky nav */
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 18px 70px; }
+
+  /* ============ 顶部导航 ============ */
   nav {
-    position:sticky; top:0; z-index:60;
-    background:rgba(255,247,240,.92);
-    backdrop-filter:saturate(160%) blur(12px);
-    -webkit-backdrop-filter:saturate(160%) blur(12px);
-    border-bottom:1px solid #FFE3D6;
-    margin:0 -16px 18px;
-    padding:10px 16px;
-    display:flex; gap:8px; overflow-x:auto;
-    scrollbar-width:none;
+    position: sticky; top: 0; z-index: 50;
+    background: #FFFFFF;
+    border-bottom: 3px solid var(--blue);
+    margin: 0 -18px 22px;
+    padding: 10px 14px 12px;
+    display: flex; gap: 8px; overflow-x: auto;
+    scrollbar-width: none;
   }
-  nav::-webkit-scrollbar{display:none}
+  nav::-webkit-scrollbar { display: none; }
   nav a {
-    flex:none; text-decoration:none; font-size:13px; font-weight:800;
-    color:#B4462F; background:#FFF1E6; border:2px solid #FFDCC6;
-    padding:7px 14px; border-radius:999px; white-space:nowrap;
-    transition:.2s;
+    flex: none;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 48px; padding: 0 18px;
+    font-size: 17px; font-weight: 700;
+    color: var(--blue); background: var(--blue-light);
+    border: 2px solid #BBD4F2; border-radius: 12px;
+    text-decoration: none; white-space: nowrap;
   }
-  nav a:active, nav a.on { background:#FF3B4E; border-color:#FF3B4E; color:#fff; }
+  nav a:active { background: var(--blue); color: #fff; }
 
-  /* hero */
+  /* ============ 封面 ============ */
   .hero {
-    border-radius:28px; padding:34px 24px 30px; color:#fff; position:relative; overflow:hidden;
-    background:linear-gradient(140deg,#FF4D5E 0%,#FF7A45 55%,#FFA352 100%);
-    box-shadow:0 16px 34px rgba(255,77,94,.30);
-    margin-bottom:18px;
+    background: linear-gradient(150deg, #1565C0 0%, #1976D2 60%, #2E9BE0 100%);
+    border-radius: 20px;
+    color: #fff;
+    padding: 34px 26px 30px;
+    box-shadow: 0 10px 26px rgba(21,101,192,.25);
+    margin-bottom: 26px;
   }
-  .hero::after{content:"";position:absolute;right:-70px;top:-70px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.16)}
-  .hero::before{content:"";position:absolute;right:40px;bottom:-90px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.12)}
-  .kicker{font-size:13px;letter-spacing:5px;font-weight:800;opacity:.92;margin-bottom:10px}
-  .hero h1{font-size:46px;line-height:1.1;font-weight:900;letter-spacing:3px;position:relative;z-index:1}
-  .hero .l2{font-size:24px;font-weight:900;letter-spacing:3px;margin-top:8px;position:relative;z-index:1}
-  .hero .route{margin-top:14px;font-size:14px;line-height:1.8;font-weight:700;opacity:.97;position:relative;z-index:1}
-  .stats{display:flex;gap:10px;margin-top:20px;position:relative;z-index:1}
-  .stat{flex:1;background:rgba(255,255,255,.22);border:2px solid rgba(255,255,255,.45);border-radius:16px;padding:10px 6px;text-align:center}
-  .stat b{display:block;font-size:17px;font-weight:900}
-  .stat span{font-size:11px;opacity:.92}
-
-  /* section */
-  section{
-    background:#fff;border-radius:24px;padding:20px 18px;margin-bottom:16px;
-    box-shadow:0 10px 26px rgba(190,120,80,.10);
-    opacity:0; transform:translateY(24px);
-    transition:opacity .5s ease, transform .5s ease;
+  .hero .kicker { font-size: 18px; letter-spacing: 4px; font-weight: 700; opacity: .92; }
+  .hero h1 { font-size: 42px; line-height: 1.25; font-weight: 800; margin-top: 10px; letter-spacing: 2px; }
+  .hero .date { font-size: 24px; font-weight: 700; margin-top: 14px; opacity: .96; }
+  .hero .who {
+    margin-top: 18px; background: rgba(255,255,255,.18);
+    border: 2px solid rgba(255,255,255,.4);
+    border-radius: 14px; padding: 14px 16px;
+    font-size: 19px; font-weight: 700; line-height: 1.7;
   }
-  section.show{opacity:1;transform:none}
-  .st{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:900;margin-bottom:14px;color:#1C1714}
-  .st::before{content:"";width:10px;height:10px;border-radius:50%;background:#FF3B4E;flex:none}
-  .st small{margin-left:auto;font-size:12px;font-weight:700;color:#B9A192;letter-spacing:1px}
 
-  .badge{
-    display:inline-block;background:linear-gradient(135deg,#FF4D5E,#FF7A45);color:#fff;
-    font-size:13px;font-weight:900;letter-spacing:2px;padding:6px 16px;border-radius:999px;margin-bottom:12px;
+  /* ============ 通用卡片 ============ */
+  section { margin-bottom: 30px; scroll-margin-top: 86px; }
+
+  .card {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 18px;
+    padding: 22px 20px;
+    margin-bottom: 16px;
   }
-  .dayhead{display:flex;align-items:center;gap:14px;margin-bottom:6px}
-  .num{
-    width:54px;height:54px;border-radius:18px;flex:none;
-    background:linear-gradient(135deg,#FF4D5E,#FF8A3D);color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:22px;font-weight:900;box-shadow:0 8px 16px rgba(255,77,94,.28);
+
+  .daytitle {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 14px;
   }
-  .dayhead .meta{font-size:17px;font-weight:900;color:#1C1714;line-height:1.35}
-  .dayhead .meta span{display:block;font-size:13px;font-weight:700;color:#A08D81;margin-top:3px}
-  .sub{font-size:14px;color:#85736A;margin-bottom:14px}
-
-  /* timeline */
-  .tl{display:flex;flex-direction:column;gap:12px}
-  .tl-item{display:flex;gap:12px;align-items:flex-start}
-  .time{
-    flex:none;min-width:92px;text-align:center;background:#FFF0EC;border:2px solid #FFD9D0;
-    color:#FF3B4E;font-size:12px;font-weight:900;padding:7px 4px;border-radius:12px;letter-spacing:.5px;
+  .daynum {
+    flex: none;
+    min-width: 84px; height: 84px;
+    background: var(--blue); color: #fff;
+    border-radius: 16px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-weight: 800; line-height: 1.15;
   }
-  .tl-body{font-size:15px;line-height:1.5;color:#3A322C;padding-top:3px}
-  .tl-body b{font-size:16px;color:#1C1714;font-weight:900}
-  .tl-body span{display:block;font-size:13px;color:#8B7A70;margin-top:3px}
+  .daynum b { font-size: 30px; }
+  .daynum span { font-size: 15px; }
+  .daytitle h2 { font-size: 27px; line-height: 1.4; font-weight: 800; }
+  .daytitle .date { font-size: 18px; color: var(--blue); font-weight: 700; }
 
-  /* list */
-  .list{display:flex;flex-direction:column;gap:10px}
-  .li{display:flex;gap:9px;font-size:15px;line-height:1.6;color:#3A322C}
-  .li::before{content:"•";color:#FF7A45;font-size:19px;font-weight:900;line-height:1.4;flex:none}
-  .li b{color:#1C1714;font-weight:800}
-
-  /* tags */
-  .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{font-size:13px;font-weight:800;color:#B4462F;background:#FFF1E6;border:2px solid #FFDCC6;padding:6px 13px;border-radius:999px}
-  .tag.solid{color:#fff;background:#FF3B4E;border-color:#FF3B4E}
-
-  /* boxes */
-  .warn{background:#FFF6DE;border:2px dashed #FFC94D;border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.6;color:#8A6100;font-weight:700;margin-top:14px}
-  .tip{background:#EAFBF2;border:2px solid #B9EED6;border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.6;color:#0E7A55;font-weight:700;margin-top:14px}
-  .divider{height:0;border-top:3px dashed #FFE3D6;margin:14px 0}
-
-  /* table */
-  .tbl{width:100%;border-collapse:collapse}
-  .tbl th{font-size:12px;font-weight:900;color:#fff;background:#FF4D5E;padding:10px 6px;letter-spacing:1px}
-  .tbl th:first-child{border-radius:12px 0 0 12px}
-  .tbl th:last-child{border-radius:0 12px 12px 0}
-  .tbl td{font-size:13px;color:#3A322C;padding:11px 6px;border-bottom:2px dashed #FFE3D6;text-align:center;line-height:1.4}
-  .tbl td.route{text-align:left;font-weight:800;color:#1C1714}
-  .tbl td.day{font-weight:900;color:#FF3B4E}
-  .tbl tr:last-child td{border-bottom:none}
-
-  /* day nav cards */
-  .daynav{display:flex;flex-direction:column;gap:10px}
-  .dn{display:flex;align-items:center;gap:12px;text-decoration:none;background:#FFF7F1;border:2px solid #FFE3D6;border-radius:16px;padding:12px 14px}
-  .dn:active{transform:scale(.98)}
-  .dn .d{flex:none;width:46px;height:46px;border-radius:14px;background:#FF3B4E;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px}
-  .dn .t{font-size:15px;font-weight:900;color:#1C1714;line-height:1.35}
-  .dn .t span{display:block;font-size:12px;font-weight:700;color:#A08D81;margin-top:2px}
-  .dn .arrow{margin-left:auto;color:#E0B9A6;font-size:18px;font-weight:900}
-
-  .foot{text-align:center;padding:22px 10px 0;color:#B9A192;font-size:13px;font-weight:700;letter-spacing:1px}
-  .foot .heart{color:#FF3B4E}
-  .foot .big{font-size:20px;font-weight:900;color:#1C1714;letter-spacing:4px;margin-bottom:8px}
-
-  .totop{
-    position:fixed;right:14px;bottom:20px;width:46px;height:46px;border-radius:50%;border:none;
-    background:linear-gradient(135deg,#FF4D5E,#FF8A3D);color:#fff;font-size:20px;font-weight:900;
-    box-shadow:0 10px 22px rgba(255,77,94,.35);z-index:70;opacity:0;pointer-events:none;transition:.3s;
+  /* 核心原则 */
+  .principle {
+    background: var(--amber-light);
+    border: 3px dashed #E0A800;
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 20px; font-weight: 800; color: var(--amber);
+    line-height: 1.7;
+    margin-bottom: 16px;
   }
-  .totop.on{opacity:1;pointer-events:auto}
+  .principle small { display: block; font-size: 16px; font-weight: 700; color: #A07400; letter-spacing: 2px; margin-bottom: 4px; }
+
+  /* 提示框 */
+  .alert {
+    background: var(--red-light);
+    border: 3px solid #F2B8B5;
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 19px; font-weight: 700; color: var(--red);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .hint {
+    background: var(--green-light);
+    border: 3px solid #AED9AF;
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 19px; font-weight: 700; color: var(--green);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  /* 行程条目 */
+  .step {
+    display: flex; gap: 14px;
+    padding: 14px 0;
+    border-bottom: 2px dashed #EBEBEB;
+  }
+  .step:last-child { border-bottom: none; padding-bottom: 4px; }
+  .step .when {
+    flex: none; width: 96px;
+    font-size: 17px; font-weight: 800; color: var(--blue);
+    background: var(--blue-light);
+    border: 2px solid #C9DDF6;
+    border-radius: 10px;
+    text-align: center; padding: 6px 4px;
+    line-height: 1.4;
+  }
+  .step .what { font-size: 19px; line-height: 1.8; color: var(--ink-soft); }
+  .step .what b { color: var(--ink); font-weight: 800; }
+
+  h3 {
+    font-size: 21px; font-weight: 800; color: var(--ink);
+    margin: 6px 0 12px;
+    padding-left: 12px;
+    border-left: 6px solid var(--blue);
+    line-height: 1.5;
+  }
+
+  /* 美食 */
+  .food {
+    background: #FFF8EE;
+    border: 2px solid #F0DCBB;
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-size: 19px; line-height: 1.8; color: #5A4520;
+  }
+  .food b { color: #8A5A00; font-weight: 800; }
+  .food ul { list-style: none; margin-top: 6px; }
+  .food li { padding-left: 22px; position: relative; margin-bottom: 6px; }
+  .food li::before { content: "🍚"; position: absolute; left: 0; top: 0; font-size: 16px; }
+
+  .tag {
+    display: inline-block;
+    background: #fff; border: 2px solid #C9DDF6;
+    color: var(--blue); font-size: 17px; font-weight: 700;
+    padding: 4px 12px; border-radius: 999px; margin: 4px 6px 0 0;
+  }
+
+  /* 重要清单 */
+  .checklist { list-style: none; }
+  .checklist li {
+    position: relative;
+    padding: 12px 0 12px 44px;
+    font-size: 19px; line-height: 1.8;
+    border-bottom: 2px dashed #EBEBEB;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: "✓";
+    position: absolute; left: 0; top: 14px;
+    width: 30px; height: 30px;
+    background: var(--green); color: #fff;
+    border-radius: 8px;
+    font-size: 19px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .checklist li b { color: var(--red); }
+
+  .foot {
+    text-align: center;
+    color: #7A7A7A;
+    font-size: 17px;
+    padding-top: 8px;
+    line-height: 1.9;
+  }
+  .foot a { color: var(--blue); font-weight: 700; }
+
+  .back-top {
+    position: fixed; right: 14px; bottom: 22px;
+    width: 56px; height: 56px; border-radius: 50%;
+    border: none; background: var(--blue); color: #fff;
+    font-size: 26px; font-weight: 800;
+    box-shadow: 0 8px 20px rgba(21,101,192,.35);
+    z-index: 60; opacity: 0; pointer-events: none; transition: .25s;
+  }
+  .back-top.on { opacity: 1; pointer-events: auto; }
+
+  @media (max-width: 400px) {
+    body { font-size: 18px; }
+    .hero h1 { font-size: 36px; }
+    .daytitle h2 { font-size: 24px; }
+    .step .when { width: 84px; font-size: 16px; }
+  }
 </style>
 </head>
 <body>
 
-<div id="bar"></div>
-
 <div class="wrap">
 
-  <nav id="nav">
-    <a href="#cover">封面</a>
-    <a href="#overview">总览</a>
+  <nav>
+    <a href="#must">重要提醒</a>
     <a href="#d1">Day1</a>
     <a href="#d2">Day2</a>
     <a href="#d3">Day3</a>
     <a href="#d4">Day4</a>
     <a href="#d5">Day5</a>
-    <a href="#tips">贴士</a>
+    <a href="#d6">Day6</a>
   </nav>
 
   <!-- 封面 -->
-  <div class="hero" id="cover">
-    <div class="kicker">小 红 书 式 旅 游 攻 略</div>
-    <h1>黔桂环线</h1>
-    <div class="l2">5 天 4 晚 · 自驾攻略</div>
-    <div class="route">南宁 → 贵阳 → 江口 → 铜仁 → 三江 → 柳州 → 南宁</div>
-    <div class="stats">
-      <div class="stat"><b>10.2-10.6</b><span>出行时间</span></div>
-      <div class="stat"><b>5天4晚</b><span>行程天数</span></div>
-      <div class="stat"><b>全程自驾</b><span>出行方式</span></div>
+  <div class="hero">
+    <div class="kicker">长 辈 友 好 版 · 全 程 少 走 路</div>
+    <h1>厦门 6 日家庭游</h1>
+    <div class="date">10月13日 — 10月18日（周二出发）</div>
+    <div class="who">
+      📍 厦门 ｜ 泉州一日 ｜ 汕头一日<br>
+      ✅ 以电瓶车、扶梯、室内景点为主，不爬山<br>
+      ✅ 每天只走一条线，累了随时能坐下
     </div>
   </div>
 
-  <section>
-    <div class="st">这趟行程玩什么<small>HIGHLIGHTS</small></div>
-    <div class="tags">
-      <span class="tag solid">贵阳老城Citywalk</span>
-      <span class="tag">甲秀楼激光秀</span>
-      <span class="tag">花果园夜景</span>
-      <span class="tag solid">梵净抹茶小镇</span>
-      <span class="tag">洞穴咖啡</span>
-      <span class="tag">中南门古城</span>
-      <span class="tag solid">程阳八寨</span>
-      <span class="tag">侗族风雨桥</span>
-      <span class="tag solid">柳州螺蛳粉</span>
-      <span class="tag">窑埠古镇夜景</span>
+  <!-- 重要提醒 -->
+  <section id="must">
+    <div class="card">
+      <h3>出发前请先办这 5 件事</h3>
+      <ul class="checklist">
+        <li><b>10月17日晚上</b>就把 10/18 凌晨的网约车预约好，或提前请前台帮忙叫车（凌晨车少，临时叫车风险大）。</li>
+        <li>鼓浪屿船票提前在<b>「屿见厦门」</b>公众号买好（Day2 用）。</li>
+        <li>动车票：厦门北 → 泉州（早班）、汕头 → 厦门（返程认准<b>「汕头站」</b>，别买潮汕站）。</li>
+        <li>带好<b>身份证</b>（买船票、动车票、景区优惠门票都要用）。</li>
+        <li>带一双<b>防滑鞋</b>（菜市场、雨林喷雾区地面湿滑），备一件薄外套。</li>
+      </ul>
     </div>
-    <div class="tip">⏰ 除 10 月 2 日外，其余每天 10:30 出发，睡够再上路～</div>
+    <div class="alert">⚠️ 最容易忘的一件事：Day6 凌晨 4 点前要出门，前一晚务必安排好车！</div>
   </section>
 
-  <!-- 总览 -->
-  <section id="overview">
-    <div class="st">一页看懂全程<small>OVERVIEW</small></div>
-    <div class="sub">出行 10月2日—10月6日 ｜ 出发地：南宁 ｜ 途经：贵阳 · 江口 · 铜仁 · 三江 · 柳州</div>
-    <table class="tbl">
-      <thead>
-        <tr><th>日期</th><th>路线</th><th>住宿地</th><th>出发</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="day">10/2</td><td class="route">南宁 → 贵阳</td><td>喷水池/大十字</td><td>7:00前</td></tr>
-        <tr><td class="day">10/3</td><td class="route">贵阳老城Citywalk</td><td>喷水池/大十字</td><td>10:30</td></tr>
-        <tr><td class="day">10/4</td><td class="route">贵阳 → 江口 → 铜仁</td><td>中南门古城</td><td>10:30</td></tr>
-        <tr><td class="day">10/5</td><td class="route">铜仁 → 程阳八寨 → 柳州</td><td>窑埠/五星街</td><td>10:30</td></tr>
-        <tr><td class="day">10/6</td><td class="route">柳州 → 南宁</td><td>回家</td><td>10:30</td></tr>
-      </tbody>
-    </table>
-    <div class="warn">⚠️ 国庆出行：G56 杭瑞高速（大兴至江口）易拥堵，江口段额外预留 1 小时。</div>
-    <div class="divider"></div>
-    <div class="st">点哪天看哪天<small>DAY INDEX</small></div>
-    <div class="daynav">
-      <a class="dn" href="#d1"><span class="d">D1</span><span class="t">南宁 → 贵阳<span>7:00前出发 · 花果园夜景 + 漂亮饭</span></span><span class="arrow">›</span></a>
-      <a class="dn" href="#d2"><span class="d">D2</span><span class="t">贵阳老城 Citywalk<span>喷水池 · 文昌阁 · 青云市集 · 甲秀楼</span></span><span class="arrow">›</span></a>
-      <a class="dn" href="#d3"><span class="d">D3</span><span class="t">贵阳 → 江口 → 铜仁<span>抹茶小镇 · 洞穴咖啡 · 中南门夜游</span></span><span class="arrow">›</span></a>
-      <a class="dn" href="#d4"><span class="d">D4</span><span class="t">铜仁 → 程阳八寨 → 柳州<span>侗寨风雨桥 · 螺蛳粉夜市</span></span><span class="arrow">›</span></a>
-      <a class="dn" href="#d5"><span class="d">D5</span><span class="t">柳州 → 南宁<span>一碗粉收尾 · 14:00前到家</span></span><span class="arrow">›</span></a>
-    </div>
-  </section>
-
-  <!-- Day1 -->
+  <!-- Day 1 -->
   <section id="d1">
-    <span class="badge">DAY 1 · 10月2日</span>
-    <div class="dayhead">
-      <div class="num">D1</div>
-      <div class="meta">南宁 → 贵阳<span>7:00 前出发 · 自驾约 7 小时</span></div>
-    </div>
-    <div class="sub">住：贵阳喷水池 / 大十字附近（连住 2 晚）</div>
+    <div class="card">
+      <div class="daytitle">
+        <div class="daynum"><b>D1</b><span>10/13 周二</span></div>
+        <div>
+          <div class="date">第一天</div>
+          <h2>抵达厦门 → 八市 + 中山路</h2>
+        </div>
+      </div>
 
-    <div class="st">晚上：漂亮饭 + 夜景<small>NIGHT</small></div>
-    <div class="list">
-      <div class="li"><b>花果园海豚广场景观餐厅：</b>吃完直接下楼看花果园夜景。</div>
-      <div class="li"><b>观山湖万象城 · 阿萨中东料理：</b>异域氛围，随手出片。</div>
-      <div class="li"><b>Aurora Restaurant：</b>高空景观西餐，俯瞰城市天际线。</div>
-    </div>
+      <div class="principle">
+        <small>核 心 原 则</small>
+        住在酒店周边活动，零交通成本。
+      </div>
 
-    <div class="divider"></div>
-    <div class="st">夜景三件套<small>PHOTO SPOT</small></div>
-    <div class="tags">
-      <span class="tag solid">花果园白宫</span>
-      <span class="tag">最出片地标</span>
-      <span class="tag solid">双子塔+海豚广场</span>
-      <span class="tag">霓虹最密商圈</span>
-      <span class="tag solid">湿地公园</span>
-      <span class="tag">看白宫倒影</span>
-    </div>
+      <div class="step">
+        <div class="when">中午</div>
+        <div class="what">落地后坐<b>空港快线或打车</b>到酒店入住休整，先把行李放下。</div>
+      </div>
+      <div class="step">
+        <div class="when">下午</div>
+        <div class="what"><b>下楼即达八市</b>，不用坐车。八市是老菜市场，<b>地面可能湿滑，请长辈留意脚下</b>。</div>
+      </div>
+      <div class="step">
+        <div class="when">傍晚</div>
+        <div class="what"><b>步行到中山路</b>，骑楼有遮阳避雨的长廊，走累了<b>随处有休息椅</b>。</div>
+      </div>
+      <div class="step">
+        <div class="when">晚餐</div>
+        <div class="what">黄则和花生汤，<b>炖得软烂</b>，很适合长辈口味。</div>
+      </div>
 
-    <div class="tip">✅ 今晚刻意避开甲秀楼、青云市集、文昌阁、民生路 —— 全部留给 Day2，两条夜线完全不重叠。</div>
-    <div class="warn">🚗 南宁 → 贵阳约 7 小时，出发前加满油，备好零食和充电线。</div>
+      <h3>顺路吃什么</h3>
+      <div class="food">
+        <ul>
+          <li><b>阿杰五香卷</b> —— 现炸酥脆</li>
+          <li><b>友生风味小吃沙茶面</b> —— 人均二三十元</li>
+          <li><b>黄则和花生汤</b> —— 晚餐，软烂好嚼</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <!-- Day2 -->
+  <!-- Day 2 -->
   <section id="d2">
-    <span class="badge">DAY 2 · 10月3日</span>
-    <div class="dayhead">
-      <div class="num">D2</div>
-      <div class="meta">贵阳老城 Citywalk<span>10:30 出发 · 起点喷水池 · 边走边吃</span></div>
-    </div>
-    <div class="sub">住：贵阳喷水池 / 大十字附近（第 2 晚）</div>
+    <div class="card">
+      <div class="daytitle">
+        <div class="daynum"><b>D2</b><span>10/14 周三</span></div>
+        <div>
+          <div class="date">第二天</div>
+          <h2>鼓浪屿全天（路线大幅简化）</h2>
+        </div>
+      </div>
 
-    <div class="st">路线时间轴<small>10:30 → 22:00</small></div>
-    <div class="tl">
-      <div class="tl-item"><div class="time">10:30-12:00</div><div class="tl-body"><b>喷水池 → 民生路 → 蔡家街</b><span>早午餐：肠旺面 · 糯米饭 · 碗耳糕 · 油炸粑</span></div></div>
-      <div class="tl-item"><div class="time">12:00-13:30</div><div class="tl-body"><b>电台街 → 大觉精舍</b><span>老巷文创、咖啡馆，百年古建里的茶咖与非遗工坊</span></div></div>
-      <div class="tl-item"><div class="time">13:30-14:30</div><div class="tl-body"><b>文昌阁</b><span>国内罕见九角攒尖顶古阁，登阁俯瞰老城青瓦屋顶</span></div></div>
-      <div class="tl-item"><div class="time">14:30-16:00</div><div class="tl-body"><b>护国路 · 补给</b><span>糯米饭 · 遵义米皮 · 冰浆 · 卤味串串</span></div></div>
-      <div class="tl-item"><div class="time">16:00-18:00</div><div class="tl-body"><b>青云市集</b><span>文创非遗商铺：丝娃娃 · 青岩猪脚 · 安顺裹卷</span></div></div>
-      <div class="tl-item"><div class="time">18:00-19:30</div><div class="tl-body"><b>晚餐</b><span>就在青云市集或附近解决，逛吃一体</span></div></div>
-      <div class="tl-item"><div class="time">20:00-22:00</div><div class="tl-body"><b>甲秀楼激光秀 ✨</b><span>国庆期间沿河上演，古楼灯火 + 激光光影，免费</span></div></div>
-    </div>
+      <div class="principle">
+        <small>核 心 原 则</small>
+        放弃爬山，以电瓶车和室内景点为主。
+      </div>
 
-    <div class="tip">✅ Day1 晚花果园/观山湖，Day2 晚老城+甲秀楼，两条线完全不重叠；甲秀楼放今晚看激光秀。</div>
+      <div class="alert">🦵 日光岩登顶对长辈膝盖负担较大，<b>建议放弃登顶</b>，改乘观光电瓶车。</div>
+
+      <div class="step">
+        <div class="when">上岛</div>
+        <div class="what">从<b>第一码头</b>坐船上岛（船票提前在<b>「屿见厦门」</b>买好）。</div>
+      </div>
+      <div class="step">
+        <div class="when">码头</div>
+        <div class="what">下船直接在码头附近买<b>电瓶车票（约 50 元/人）</b>，坐到<b>菽庄花园</b>下车。</div>
+      </div>
+      <div class="step">
+        <div class="when">上午</div>
+        <div class="what"><b>菽庄花园</b>：依海而建的园林，<b>四十四桥临海平缓、无台阶</b>，长辈可在亭台楼阁间闲坐听涛；园内<b>钢琴博物馆是室内场馆，恒温不怕日晒</b>。</div>
+      </div>
+      <div class="step">
+        <div class="when">接着</div>
+        <div class="what"><b>皓月园滨海步道</b>很平缓，郑成功雕像面朝大海，适合慢慢散步。</div>
+      </div>
+      <div class="step">
+        <div class="when">午餐</div>
+        <div class="what">就在<b>龙头路</b>解决，老字号鱼丸、花生汤、沙茶面都有。</div>
+      </div>
+      <div class="step">
+        <div class="when">下午</div>
+        <div class="what">长辈体力还行的话，坐电瓶车去<b>八卦楼（风琴博物馆）</b>：室内参观，<b>全程可坐轮椅通行</b>，不受天气影响。</div>
+      </div>
+      <div class="step">
+        <div class="when">返程</div>
+        <div class="what"><b>下午三四点即可返程</b>，避开返程高峰。</div>
+      </div>
+
+      <h3>午餐怎么点（长辈吃得惯）</h3>
+      <div class="food">
+        <ul>
+          <li><b>沙茶面点不辣版</b></li>
+          <li><b>鱼丸选鲨鱼丸</b> —— 口感软弹不硬</li>
+          <li><b>花生汤</b> —— 软糯好消化</li>
+        </ul>
+      </div>
+      <div style="margin-top:10px">
+        <span class="tag">电瓶车 50 元/人</span>
+        <span class="tag">室内场馆优先</span>
+        <span class="tag">轮椅可通行</span>
+      </div>
+    </div>
   </section>
 
-  <!-- Day3 -->
+  <!-- Day 3 -->
   <section id="d3">
-    <span class="badge">DAY 3 · 10月4日</span>
-    <div class="dayhead">
-      <div class="num">D3</div>
-      <div class="meta">贵阳 → 江口 → 铜仁<span>10:30 出发 · 约 285 公里 · 3.3-4 小时</span></div>
-    </div>
-    <div class="sub">住：铜仁中南门古城附近</div>
+    <div class="card">
+      <div class="daytitle">
+        <div class="daynum"><b>D3</b><span>10/15 周四</span></div>
+        <div>
+          <div class="date">第三天</div>
+          <h2>泉州一日游</h2>
+        </div>
+      </div>
 
-    <div class="warn">⚠️ 国庆 G56 杭瑞高速（大兴至江口）易拥堵，额外预留 1 小时；预计 15:00-15:30 抵达抹茶小镇。</div>
+      <div class="principle">
+        <small>核 心 原 则</small>
+        一条直线走完，每个景点出口就是吃的。
+      </div>
 
-    <div class="divider"></div>
-    <div class="st">15:30-17:30 · 梵净抹茶小镇<small>免费</small></div>
-    <div class="list">
-      <div class="li"><b>免费入场，营业到 22:00</b>，先在这儿吃个「下午饭」。</div>
-      <div class="li">宋代点茶 · 抹茶宴 · 抹茶冰淇淋 · 抹茶精酿，近 50 家商户。</div>
-      <div class="li">国庆可能有戏剧快闪，边逛边拍很出片。</div>
-    </div>
+      <div class="hint">🚌 泉州古城<b>路面平整、无台阶</b>，非常适合长辈步行；累了随时坐<b>「小白车」，2 元/次，招手即停</b>，不用走回头路。</div>
 
-    <div class="divider"></div>
-    <div class="st">17:30-19:00 · 梵之云汀洞穴咖啡<small>出片</small></div>
-    <div class="list">
-      <div class="li">距抹茶小镇约 <b>10 分钟车程</b>，营业到 22:00。</div>
-      <div class="li">洞内恒温 18℃，钟乳石 + 地下河氛围，手冲或抹茶特调。</div>
-      <div class="li">☕ 记得带一件薄外套，洞里会冷。</div>
-    </div>
+      <div class="step">
+        <div class="when">早上</div>
+        <div class="what">厦门北坐<b>早班动车</b>到泉州站，下车<b>打车直奔开元寺</b>。</div>
+      </div>
+      <div class="step">
+        <div class="when">上午</div>
+        <div class="what">开元寺<b>西门出来就是西街</b>，骑楼下边逛边吃，<b>面线糊、润饼</b>随手买，完全顺路。</div>
+      </div>
+      <div class="step">
+        <div class="when">中午</div>
+        <div class="what">西街尽头就是<b>钟楼</b>，打卡后拐入中山路吃午饭。</div>
+      </div>
+      <div class="step">
+        <div class="when">下午</div>
+        <div class="what">沿 <b>府文庙 → 清净寺 → 通淮关岳庙 → 天后宫</b> 这条线走，景点之间距离很近。</div>
+      </div>
+      <div class="step">
+        <div class="when">傍晚</div>
+        <div class="what">坐动车返回厦门，结束一天。</div>
+      </div>
 
-    <div class="divider"></div>
-    <div class="st">19:00-21:00 · 夜游中南门古城<small>1-1.5h 车程</small></div>
-    <div class="list">
-      <div class="li">古城 <b>19:00 亮灯</b>，21:30 后人流减少，灯笼巷、江边最舒服。</div>
-      <div class="li">夜宵：酸汤豆花面 · 社饭团子 · 油炸粑。</div>
-      <div class="li">🚢 锦江游船约 21:00 发船，到得晚可能赶不上，随缘。</div>
+      <div class="hint">🙏 <b>关岳庙、天后宫都免费</b>；关岳庙香火极旺，长辈可以体验闽南拜拜文化。</div>
+
+      <h3>午餐推荐</h3>
+      <div class="food">
+        <ul>
+          <li><b>好成财牛排 + 咸饭 + 牛肉羹</b> —— 牛肉炖得软烂，长辈嚼得动</li>
+          <li><b>面线糊、润饼</b> —— 沿西街边走边吃</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- Day4 -->
+  <!-- Day 4 -->
   <section id="d4">
-    <span class="badge">DAY 4 · 10月5日</span>
-    <div class="dayhead">
-      <div class="num">D4</div>
-      <div class="meta">铜仁 → 三江程阳八寨 → 柳州<span>10:30 出发 · 约 369 公里 · 4.7 小时</span></div>
-    </div>
-    <div class="sub">住：柳州窑埠古镇或五星街附近</div>
+    <div class="card">
+      <div class="daytitle">
+        <div class="daynum"><b>D4</b><span>10/16 周五</span></div>
+        <div>
+          <div class="date">第四天</div>
+          <h2>汕头一日游</h2>
+        </div>
+      </div>
 
-    <div class="st">15:30-17:30 · 程阳八寨<small>侗寨</small></div>
-    <div class="list">
-      <div class="li">三江侗族自治县林溪镇，<b>八个侗族村寨</b>：吊脚楼、鼓楼、程阳风雨桥。</div>
-      <div class="li">🎫 门票约 <b>80 元</b>（含观光车），<b>私家车不能进寨</b>，停外围换乘。</div>
-      <div class="li">核心逛 <b>马鞍寨 · 平寨 · 岩寨</b>，约 2 小时刚好。</div>
-    </div>
+      <div class="principle">
+        <small>核 心 原 则</small>
+        小公园老城本身就是一条美食步行线。
+      </div>
 
-    <div class="divider"></div>
-    <div class="st">17:30 出发 · 2-2.5 小时到柳州<small>19:30 抵达</small></div>
-    <div class="list">
-      <div class="li"><b>窑埠古镇看夜景</b>，江边灯亮起来很出片。</div>
-      <div class="li"><b>五星街 / 青云夜市</b>，柳州人的深夜主场，专程来嗦粉。</div>
-      <div class="li">🍜 螺蛳粉推荐：<b>金弟炒螺蛳粉 · 阿姣螺蛳粉 · 西环肥仔螺蛳粉</b>。</div>
-    </div>
+      <div class="step">
+        <div class="when">出站</div>
+        <div class="what">从<b>汕头站</b>出站后，直接进入<b>小公园骑楼群</b>，这一带巷弄<b>坡度平缓</b>，老人小孩都能轻松走。</div>
+      </div>
+      <div class="step">
+        <div class="when">重点</div>
+        <div class="what"><b>镇邦街</b>：短短 120 米藏着最地道的潮汕美食，顺着老街慢慢走，<b>不用刻意找店</b>。</div>
+      </div>
+      <div class="step">
+        <div class="when">午餐</div>
+        <div class="what">就在镇邦街解决，或去<b>福平路吃牛肉粿条汤</b>（汤清肉嫩，长辈接受度高）。</div>
+      </div>
+      <div class="step">
+        <div class="when">下午</div>
+        <div class="what"><b>西堤公园</b>：看礐石大桥和内海湾的绝佳位置，<b>堤岸步道平缓</b>，夕阳时分特别美。</div>
+      </div>
+      <div class="step">
+        <div class="when">可选</div>
+        <div class="what">长辈对轮渡感兴趣的话，坐 <b>1 元广场轮渡</b>跨内海湾，单程几分钟，不累。</div>
+      </div>
+      <div class="step">
+        <div class="when">傍晚</div>
+        <div class="what">坐动车回厦门。</div>
+      </div>
 
-    <div class="divider"></div>
-    <div class="tags">
-      <span class="tag solid">风雨桥</span><span class="tag">鼓楼</span><span class="tag">吊脚楼</span>
-      <span class="tag solid">侗族大歌</span><span class="tag">窑埠古镇</span><span class="tag solid">螺蛳粉</span>
+      <div class="alert">🎫 返程车次一定选<b>「汕头站」</b>出发，<b>不要买潮汕站的票</b>，两站相距很远。</div>
+
+      <h3>镇邦街吃什么</h3>
+      <div class="food">
+        <ul>
+          <li><b>卤鹅 · 蚝烙 · 牛肉丸 · 猪杂粥</b> —— 一家接一家</li>
+          <li><b>福平路牛肉粿条汤</b> —— 汤清肉嫩</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- Day5 -->
+  <!-- Day 5 -->
   <section id="d5">
-    <span class="badge">DAY 5 · 10月6日</span>
-    <div class="dayhead">
-      <div class="num">D5</div>
-      <div class="meta">柳州 → 南宁 · 返程<span>10:30 出发 · 约 240 公里 · 2.5-3 小时</span></div>
-    </div>
+    <div class="card">
+      <div class="daytitle">
+        <div class="daynum"><b>D5</b><span>10/17 周六</span></div>
+        <div>
+          <div class="date">第五天</div>
+          <h2>植物园 + 沙坡尾</h2>
+        </div>
+      </div>
 
-    <div class="st">出发前的三个选项<small>10:30 前</small></div>
-    <div class="list">
-      <div class="li">🌞 <b>起得来：</b>龙潭公园快速逛 1 小时（免费）。</div>
-      <div class="li">🎁 <b>想带手信：</b>螺蛳粉产业园买伴手礼 + 吃现煮螺蛳粉。</div>
-      <div class="li">😋 <b>最轻松：</b>嗦一碗粉当早午餐，10:30 准时出发。</div>
-    </div>
+      <div class="principle">
+        <small>核 心 原 则</small>
+        植物园走「下行路线」，沙坡尾只坐不逛。
+      </div>
 
-    <div class="tip">🏠 预计 13:30-14:00 抵达南宁，行程圆满结束～</div>
+      <div class="hint">🛗 植物园强烈建议<b>南门进、西门出</b>：南门进去直接坐<b>山海扶梯，约 10 分钟到山顶，全程不爬山</b>，扶梯上还能拍到双子塔和海景。</div>
 
-    <div class="divider"></div>
-    <div class="st">实用贴士 &amp; 避坑<small>MUST READ</small></div>
-    <div class="list">
-      <div class="li"><b>国庆拥堵：</b>G56 杭瑞高速大兴至江口段易堵，多留 1 小时。</div>
-      <div class="li"><b>出发节奏：</b>除 Day1 外每天 10:30 出发，行程不赶不累。</div>
-      <div class="li"><b>洞穴咖啡：</b>洞内 18℃，一定带薄外套。</div>
-      <div class="li"><b>锦江游船：</b>约 21:00 发船，晚到就当随缘项目。</div>
-      <div class="li"><b>程阳八寨：</b>门票 80 元含观光车，私家车不进寨。</div>
-      <div class="li"><b>住宿：</b>贵阳连住 2 晚，铜仁住古城口，柳州住夜市旁。</div>
+      <div class="step">
+        <div class="when">路线</div>
+        <div class="what"><b>南门 → 山海扶梯 → 多肉植物区 → 热带雨林世界 → 西门出</b>（一路下行）。</div>
+      </div>
+      <div class="step">
+        <div class="when">喷雾</div>
+        <div class="what">10 月雨林世界喷雾时间：<b>9:00–11:00 和 14:00–16:00</b>，阳光穿过水雾非常好看。</div>
+      </div>
+      <div class="step">
+        <div class="when">出园</div>
+        <div class="what">西门出来<b>右转 100 米就是「西门土笋冻」</b>，顺路尝一份。</div>
+      </div>
+      <div class="step">
+        <div class="when">下午</div>
+        <div class="what">坐车去<b>沙坡尾</b>，找一家露天茶馆坐下休息（比如<b>「茶人码头」</b>）。文艺街区不用走完，<b>坐着喝茶看渔港，比逛街舒服得多</b>。</div>
+      </div>
+
+      <div class="alert">👟 雨林喷雾区<b>地面湿滑</b>，提醒长辈<b>穿防滑鞋，不要穿凉鞋</b>。</div>
+      <div class="hint">🎟 门票：<b>60 岁以上半价（15 元），65 岁以上免票</b>，请带好身份证。</div>
     </div>
   </section>
 
-  <section id="tips">
-    <div style="background:linear-gradient(135deg,#FF4D5E,#FF8A3D);border-radius:20px;padding:22px 16px;text-align:center;box-shadow:0 12px 28px rgba(255,77,94,.3)">
-      <div style="font-size:22px;font-weight:900;color:#fff;letter-spacing:3px">南宁 ✋ 贵阳 ✋ 铜仁 ✋ 三江 ✋ 柳州</div>
-      <div style="font-size:14px;font-weight:700;color:#FFE9DE;margin-top:8px;letter-spacing:2px">5 天 4 晚 · 黔桂环线 · 一次玩够</div>
-    </div>
-    <div class="foot">
-      <div class="big">祝 旅 愉 快</div>
-      <div><span class="heart">❤</span> 收藏这篇，国庆照着走 ｜ <span class="heart">❤</span> 上下滑动查看每日详情</div>
+  <!-- Day 6 -->
+  <section id="d6">
+    <div class="card">
+      <div class="daytitle">
+        <div class="daynum"><b>D6</b><span>10/18 周日</span></div>
+        <div>
+          <div class="date">第六天 · 返程</div>
+          <h2>凌晨出发 → 回家</h2>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="when">6:00</div>
+        <div class="what">早上 <b>6 点的飞机</b>。</div>
+      </div>
+      <div class="step">
+        <div class="when">4:00 前</div>
+        <div class="what"><b>凌晨 4 点前必须从酒店出发</b>。</div>
+      </div>
+
+      <div class="alert" style="font-size:20px">
+        🚕 请务必在 <b>10月17日晚上</b>就预约好网约车，或提前跟前台说好帮忙叫车。<br>
+        凌晨车少，<b>临时叫车风险大</b>。
+      </div>
+
+      <div class="hint">🧳 前一晚把行李收好、证件充电器放在随身包里，早上就能从容出门。</div>
     </div>
   </section>
+
+  <div class="foot">
+    厦门 6 日 · 长辈友好版 ｜ 10.13 - 10.18<br>
+    <a href="qiangui.html">看上一版：黔桂环线 5 日自驾攻略</a>
+  </div>
 
 </div>
 
-<button class="totop" id="totop" aria-label="回到顶部">↑</button>
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
 
 <script>
-  var bar = document.getElementById('bar');
-  var totop = document.getElementById('totop');
-  var navs = Array.prototype.slice.call(document.querySelectorAll('nav a'));
-  var secs = navs.map(function(a){ return document.querySelector(a.getAttribute('href')); });
-
-  function onScroll(){
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    var p = h > 0 ? (window.pageYOffset / h) * 100 : 0;
-    bar.style.width = p + '%';
-    totop.classList.toggle('on', window.pageYOffset > 600);
-
-    var cur = 0, y = window.pageYOffset + 120;
-    for (var i = 0; i < secs.length; i++){
-      if (secs[i] && secs[i].offsetTop <= y) cur = i;
-    }
-    navs.forEach(function(a, i){ a.classList.toggle('on', i === cur); });
+  var top = document.getElementById('backTop');
+  function onScroll() {
+    top.classList.toggle('on', window.pageYOffset > 500);
   }
-  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  totop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-
-  // 入场动画
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
-    }, {threshold:.08});
-    document.querySelectorAll('section').forEach(function(s){ io.observe(s); });
-  } else {
-    document.querySelectorAll('section').forEach(function(s){ s.classList.add('show'); });
-  }
+  top.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
 </body>
 </html>
